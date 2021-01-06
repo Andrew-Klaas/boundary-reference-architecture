@@ -5,7 +5,7 @@ resource "random_pet" "test" {
 locals {
   tags = {
     Name = "Boundary Demo - Aklaas"
-    owner = "aklaas@hashicorp.com"
+    owner = ""
     TTL = 48
   }
 
