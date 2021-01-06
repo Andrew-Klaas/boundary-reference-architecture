@@ -4,7 +4,9 @@ resource "random_pet" "test" {
 
 locals {
   tags = {
-    Name = "${var.tag}-${random_pet.test.id}"
+    Name = "Boundary Demo - Aklaas"
+    owner = "aklaas@hashicorp.com"
+    TTL = 48
   }
 
   pub_cidrs  = cidrsubnets("10.0.0.0/24", 4, 4, 4, 4)
@@ -12,7 +14,7 @@ locals {
 }
 
 variable "tag" {
-  default = "boundary-test"
+  default = "ak"
 }
 
 variable "boundary_bin" {
@@ -28,7 +30,7 @@ variable "num_workers" {
 }
 
 variable "num_controllers" {
-  default = 2
+  default = 1
 }
 
 variable "num_targets" {

@@ -1,5 +1,5 @@
 resource "aws_key_pair" "boundary" {
-  key_name   = "boundary-demo"
+  key_name   = "${var.tag}-key-pair"
   public_key = file(var.pub_ssh_key_path)
 
   tags = local.tags
